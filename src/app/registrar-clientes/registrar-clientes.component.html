@@ -1,0 +1,49 @@
+<app-pagina-principal></app-pagina-principal>
+
+<div class="container">
+
+    <h1>Registrar Cliente</h1>
+
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="idcliente" class="form-label">ID</label>
+        <input type="text" class="form-control" id="idcliente" placeholder="ID Cliente"
+        [(ngModel)]="nuevoCliente.idcliente">
+      </div>
+      <div class="col-md-6">
+        <label for="nomcliente" class="form-label">NOMBRE</label>
+        <input type="text" class="form-control" id="nomcliente" placeholder="Nombre"
+        [(ngModel)]="nuevoCliente.nomcliente">
+      </div>
+      <div class="col-12">
+        <label for="apecliente" class="form-label">APELLIDO</label>
+        <input type="text" class="form-control" id="apecliente" placeholder="Apellido"
+        [(ngModel)]="nuevoCliente.apecliente">
+      </div>
+      <div class="col-12">
+        <label for="dni" class="form-label">DNI</label>
+        <input type="text" class="form-control" id="dni" placeholder="DNI"
+        [(ngModel)]="nuevoCliente.dni">
+      </div>
+      <div class="col-md-6">
+        <label for="direccion" class="form-label">DIRECCION</label>
+        <input type="text" class="form-control" id="direccion" placeholder="Direccion"
+        [(ngModel)]="nuevoCliente.direccion">
+      </div>
+      <div class="col-md-6">
+        <label for="celular" class="form-label">CELULAR</label>
+        <input type="text" class="form-control" id="celular" placeholder="Celular"
+        [(ngModel)]="nuevoCliente.celular">
+      </div>
+      <div class="col-md-6">
+        <label for="puesto" class="form-label">PUESTO</label>
+        <input type="text" class="form-control" id="puesto" placeholder="Puesto"
+        [(ngModel)]="nuevoCliente.puesto">
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </form>
+</div>
+
