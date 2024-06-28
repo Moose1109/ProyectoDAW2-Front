@@ -10,14 +10,15 @@ export class ClienteService {
 
   private baseUrl = 'http://localhost:8080/api/clientes';
 
+
   constructor(private http: HttpClient) { }
 
   public listar(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(this.baseUrl);
   }
 
-  public registrar(cliente: Cliente): Observable<any> {
-    return this.http.post<any>(this.baseUrl, cliente);
+  public registar(cliente: Cliente): Observable<Object>{
+    return this.http.post(this.baseUrl, cliente);
   }
 
   public buscar(id: string): Observable<Cliente> {

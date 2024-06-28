@@ -10,33 +10,36 @@ import { ClienteService } from '../service/cliente.service';
 })
 export class RegistrarClientesComponent {
 
-  nuevoCliente: Cliente = {
-    "idcliente": '',
-    "nomcliente": '',
-    "apecliente": '',
-    "dni": '',
-    "direccion": '',
-    "celular": '',
-    "estado": 1,
-    "puesto": ''
-  };
+  nuevoCliente: Cliente = new Cliente();
 
-  constructor(private clienteService: ClienteService,
-    private router: Router) { }
+  constructor(
+    private clienteService: ClienteService,
+    private router: Router
+  ) {}
 
-    registrarCliente() {
+  onSubmit() {
+    this.registrarCliente();
+  }
 
-      this.clienteService.registrar(this.nuevoCliente).subscribe(
-        response => {
-          console.log('Cliente registrado con éxito:', response);
-          //si no hay error redirecciona
-          this.router.navigate(['/listado']);
-          },
-          error => {
-          console.error('Error al registrar el Cliente:', error);
-          }
-      )
-    };
+  registrarCliente(){
+    this.clienteService.registar(this.nuevoCliente).subscribe(
+      {
+        next: (datos) => {
+          console.log('Cliente registrado con éxito', datos);
+          this.irListaClientes();
+        },
+        error: (error: any) => {
+          console.error('Error al registrar el cliente', error);
+        }
+      }
+    );
+  }
+
+  irListaClientes() {
+    this.router.navigate(['/listado']);
+  }
 }
+
+
 
 

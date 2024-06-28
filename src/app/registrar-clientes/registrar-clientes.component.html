@@ -5,10 +5,10 @@
   <h1 class="text-center text-success">Modulo Cliente</h1>
   <h4 class="text-left">Por favor, ingrese los datos:</h4>
 
-  <form class="row g-3" (ngSubmit)="registrarCliente()">
+  <form class="row g-3" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="idcliente" class="form-label">ID</label>
-        <input type="text" class="form-control" id="idcliente" name="id_prod" placeholder="Ingrese ID"
+        <input type="text" class="form-control" id="idcliente" name="id_prod" placeholder="Ingrese ID" required="true"
         [(ngModel)]="nuevoCliente.idcliente">
     </div>
 
@@ -49,7 +49,7 @@
         </div>
     <div class="form-group">
       <label for="estato" class="form-label">Estado</label>
-            <input type="text" name="estado" class="form-control" id="estado"
+            <input type="number" name="estado" class="form-control" id="estado"
              [(ngModel)]="nuevoCliente.estado" placeholder="Estado">
         </div>
 
