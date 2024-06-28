@@ -1,49 +1,61 @@
 <app-pagina-principal></app-pagina-principal>
 
 <div class="container">
+  <br>
+  <h1 class="text-center text-success">Modulo Cliente</h1>
+  <h4 class="text-left">Por favor, ingrese los datos:</h4>
 
-    <h1>Registrar Cliente</h1>
-
-    <form class="row g-3">
-      <div class="col-md-6">
+  <form class="row g-3" (ngSubmit)="registrarCliente()">
+    <div class="form-group">
         <label for="idcliente" class="form-label">ID</label>
-        <input type="text" class="form-control" id="idcliente" placeholder="ID Cliente"
+        <input type="text" class="form-control" id="idcliente" name="id_prod" placeholder="Ingrese ID"
         [(ngModel)]="nuevoCliente.idcliente">
-      </div>
-      <div class="col-md-6">
-        <label for="nomcliente" class="form-label">NOMBRE</label>
-        <input type="text" class="form-control" id="nomcliente" placeholder="Nombre"
-        [(ngModel)]="nuevoCliente.nomcliente">
-      </div>
-      <div class="col-12">
-        <label for="apecliente" class="form-label">APELLIDO</label>
-        <input type="text" class="form-control" id="apecliente" placeholder="Apellido"
-        [(ngModel)]="nuevoCliente.apecliente">
-      </div>
-      <div class="col-12">
-        <label for="dni" class="form-label">DNI</label>
-        <input type="text" class="form-control" id="dni" placeholder="DNI"
-        [(ngModel)]="nuevoCliente.dni">
-      </div>
-      <div class="col-md-6">
-        <label for="direccion" class="form-label">DIRECCION</label>
-        <input type="text" class="form-control" id="direccion" placeholder="Direccion"
-        [(ngModel)]="nuevoCliente.direccion">
-      </div>
-      <div class="col-md-6">
-        <label for="celular" class="form-label">CELULAR</label>
-        <input type="text" class="form-control" id="celular" placeholder="Celular"
-        [(ngModel)]="nuevoCliente.celular">
-      </div>
-      <div class="col-md-6">
-        <label for="puesto" class="form-label">PUESTO</label>
-        <input type="text" class="form-control" id="puesto" placeholder="Puesto"
-        [(ngModel)]="nuevoCliente.puesto">
-      </div>
+    </div>
 
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+    <div class="form-group">
+      <label for="nomcliente" class="form-label">Nombre</label>
+            <input type="text" name="nomcliente" class="form-control" id="nomcliente"
+             [(ngModel)]="nuevoCliente.nomcliente" placeholder="Nombre">
+        </div>
+
+    <div class="form-group">
+      <label for="apecliente" class="form-label">Apellido</label>
+      <input type="text" name="apecliente" class="form-control" id="apecliente"
+       [(ngModel)]="nuevoCliente.apecliente" placeholder="Apellido">
+  </div>
+
+    <div class="form-group">
+      <label for="dni" class="form-label">DNI</label>
+            <input type="text" name="dni" class="form-control" id="dni"
+             [(ngModel)]="nuevoCliente.dni" placeholder="DNI">
+        </div>
+
+    <div class="form-group">
+      <label for="Direccion" class="form-label">Direccion</label>
+            <input type="text" name="Direccion" class="form-control" id="Direccion"
+             [(ngModel)]="nuevoCliente.direccion" placeholder="Direccion">
+        </div>
+
+    <div class="form-group">
+      <label for="celular" class="form-label">Celular</label>
+            <input type="text" name="celular" class="form-control" id="celular"
+             [(ngModel)]="nuevoCliente.celular" placeholder="Celular">
+        </div>
+
+    <div class="form-group">
+      <label for="puesto" class="form-label">Puesto</label>
+            <input type="text" name="puesto" class="form-control" id="puesto"
+             [(ngModel)]="nuevoCliente.puesto" placeholder="Puesto">
+        </div>
+    <div class="form-group">
+      <label for="estato" class="form-label">Estado</label>
+            <input type="text" name="estado" class="form-control" id="estado"
+             [(ngModel)]="nuevoCliente.estado" placeholder="Estado">
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Registrar</button>
       </div>
-    </form>
+  </form>
 </div>
 

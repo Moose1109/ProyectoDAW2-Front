@@ -1,23 +1,46 @@
 <app-pagina-principal></app-pagina-principal>
 
-<div class="container">
-  <h1 class="text-center">Listado Cliente</h1>
+<!-- listar-clientes.component.html -->
+<div class="container-fluid">
+  <br>
+  <h2 class="text-center">LISTADO DE CLIENTES</h2>
 
-  <table class="table">
-    <thead>
+  <br>
+  <table class="table table-striped text-center">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">NOMBRE</th>
         <th scope="col">APELLIDO</th>
         <th scope="col">DNI</th>
-        <th scope="col">DIRECCIÓN</th>
+        <th scope="col">DIRECCION</th>
         <th scope="col">CELULAR</th>
         <th scope="col">PUESTO</th>
-        <th scope="col">ACCIONES</th>
-        <th scope="col"></th>
+        <th scope="col">ESTADO</th>
+        <th colspan="2" scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
+      <tr *ngFor="let c of clientes">
+        <th scope="row">{{ c.idcliente }}</th>
+        <td>{{ c.nomcliente }}</td>
+        <td>{{ c.apecliente }}</td>
+        <td>{{ c.dni }}</td>
+        <td>{{ c.direccion }}</td>
+        <td>{{ c.celular }}</td>
+        <td>{{ c.estado }}</td>
+        <td>{{ c.puesto }}</td>
+        <td><button (click)="editarCliente(c.idcliente)" class="btn btn-outline-danger">Editar</button></td>
+        <td><button (click)="eliminarCliente(c.idcliente)" class="btn btn-danger">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<!--    <tbody>
       <tr *ngFor="let c of clientes">
         <th scope="row">{{ c.idcliente }}</th>
         <td>{{ c.nomcliente }}</td>
@@ -32,3 +55,4 @@
     </tbody>
   </table>
 </div>
+-->

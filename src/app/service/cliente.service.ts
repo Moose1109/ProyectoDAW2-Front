@@ -19,4 +19,18 @@ export class ClienteService {
   public registrar(cliente: Cliente): Observable<any> {
     return this.http.post<any>(this.baseUrl, cliente);
   }
+
+  public buscar(id: string): Observable<Cliente> {
+    return this.http.get<Cliente>(this.baseUrl + `/${id}`);
+  }
+
+  public actualizar(id: string, cliente: Cliente): Observable<any> {
+    return this.http.put(this.baseUrl + `/${id}`, cliente);
+  }
+
+  public eliminarCliente(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
 }
+
