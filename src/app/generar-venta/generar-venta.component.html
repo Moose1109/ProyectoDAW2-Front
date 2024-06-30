@@ -1,0 +1,158 @@
+<app-pagina-principal></app-pagina-principal>
+<h1 >Registro de Ventas</h1>
+		<br>	
+		<div class="d-flex" >
+			
+			<div class="col-sm-4">		
+				<div class="card">
+				
+					<form action="/guardarDetalleProducto" method="post">	
+						<div class="card-body">
+							<div class="form-group">
+								<label>Datos del Cliente</label>
+							</div>
+							
+						<div class="form-group col-md-9">
+						
+							<label for="idcliente">Puesto</label> 
+							<select id="idcliente" class="form-control" name="idcliente" >
+								<option value="-1">Seleccione...</option>
+								<option *ngFor="let c of cliente" [value]="c.idcliente" th:data-codigo="${c.idcliente}"  th:data-cliente="${c.nomcliente} + ' '+ ${c.apecliente}" th:data-dni="${c.dni}" th:data-telefono="${c.celular}">{{c.puesto +' ' + c.nomcliente}}"</option>
+                                <!--"-->
+							</select>
+							<br>
+							<div class="form-group d-flex">
+								
+								<div class="col-sm-5 ">
+									<label for="inputCli">Cliente</label>
+									<input type="text" id="nomcliente"  class="form-control" placeholder="Cliente" readonly>
+								</div>
+																			
+									<div class="col-sm-5">
+										<label for="inputCli">DNI</label>
+										<input type="text" id="dni"  class="form-control" placeholder="DNI" readonly>
+									</div>
+										    
+								    <div class="col-sm-5">
+										<label for="inputCli">celular</label>
+										<input type="text" id="telefono"  class="form-control" placeholder="Telefono" readonly>
+									</div>
+							</div>
+						
+						</div>
+							<br>
+							<div class="form-group">
+								<label> Datos Productos</label>
+							</div>
+								<div class="form-group col-md-9">
+								
+									<div class="form-group d-flex " >	
+										<div class="col-sm-9">
+										    <label for="inputCat">Producto</label>
+											 <select id="inputCatProducto" class="form-control" name="codproducto"  >
+											    <option value="-1">Seleccione...</option>
+											    <option *ngFor="let p of producto" [value]="p.codproducto"  th:data-precio="${p.precio}" th:data-stock="${p.stock}">{{p.nomproducto}}</option>
+											</select>
+										
+										</div>
+									</div>									    
+									<br>
+									<div class="form-group d-flex">
+										<div class="col-sm-4 ">
+											<label for="inputCat">Precio</label>
+									        <input type="number" id="precio"  name="precio"class="form-control" placeholder="S/.0.00" readonly>
+									    </div>
+																		
+									      <div class="col-sm-4">
+									        <label for="inputCat">Cantidad</label>
+									        <input type="text" name="cantidad"  class="form-control" placeholder="Cantidad">
+									    </div>
+									    
+									    <div class="col-sm-3">
+										     <label for="inputCat">Stock</label>
+									        <input type="number" id="stock"  name="stock" class="form-control" placeholder="Stock" readonly>
+									    </div>
+									</div>
+								</div>
+								<br>
+                            <div class="form-group">
+                                <input type="submit"  value="Agregar" class="btn btn-outline-info">		         
+                            </div>	
+						</div>					
+					</form>			
+				</div>
+			</div>
+			
+			<div class="col-sm-7">
+				<div class="card">
+					<div class="card-body">
+						<div class=" d-flex  " >
+						
+							<div class="col-sm-5">
+								<a href="/cargarListaVenta"class="btn btn-info" >Lista Venta</a>
+							</div>
+							
+							<div class="ml-auto d-flex col-sm-5" >
+								<label>Numero Serie</label>								
+								<input type="text" name="nroserie" th:value="${nroserie}" class="form-control">
+							</div>
+						</div>
+						<br>
+						<table   class="table table-hover" >
+						
+							<thead >
+								<tr>
+								
+								<th>Nro</th>
+								<th>Codigo</th>
+								<th>Producto</th>
+								<th>Precio</th>
+								<th>Cantidad</th>
+								<th>SubTotal</th>
+								<th>Acciones</th>
+								
+								</tr>
+								
+							</thead>
+							
+							<tbody >
+							    <tr th:each="item, itemStat : ${listado}">
+							        <td th:text="${itemStat.index + 1}"></td>
+							        <td th:text="${item.codproducto}"></td>
+							        <td th:text="${item.nomproducto}"></td>  
+							        <td th:text="${item.precio}"></td>
+							        <td th:text="${item.cantidad}"></td>
+							        <td th:text="${item.precioventa}"></td>
+							        <td class="d-flex">
+							            <a th:href="@{'/eliminarItem/'+ ${itemStat.index}}" class="btn btn-danger" style="margin-left:10px;">Eliminar</a>
+							        </td>
+							    </tr>
+							</tbody>
+	
+						</table>
+					
+					
+					</div>
+					
+					<div class="card-footer d-flex">
+						<div class="col-sm-6">
+						  <form id="generarVentaForm" action="/generarVenta" method="post"> 
+						    <input type="hidden" id="codigoCliente" name="idcliente" />
+						 
+						    <div class="col-sm-6">
+						        <input type="submit" value="GenerarVenta" class="btn btn-success" >
+						    </div>
+						</form>
+
+						</div>
+						
+						<div class="col-sm-4 d-flex">
+							<label for="inputCat">Total a Pagar</label>
+							<input type="text" name="totalPagar"  th:value="${totalPagar}" class="form-control">
+						</div>
+	
+					</div>
+				
+				</div>			
+			</div>
+		</div>

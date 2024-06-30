@@ -10,8 +10,18 @@ import { ClienteService } from '../service/cliente.service';
 })
 export class RegistrarClientesComponent {
 
-  nuevoCliente: Cliente = new Cliente();
+  nuevoCliente: Cliente = { "idcliente": '',
+    "nomcliente": '',
+    "apecliente": '',
+    "dni": '',
+    "direccion": '',
+    "celular": '',
+    "estado": 1,
+    "puesto": ''
+  };
 
+
+  
   constructor(
     private clienteService: ClienteService,
     private router: Router

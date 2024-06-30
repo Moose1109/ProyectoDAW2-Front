@@ -9,6 +9,8 @@ import { RegistrarClientesComponent } from './registrar-clientes/registrar-clien
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ActualizarClientesComponent } from './actualizar-clientes/actualizar-clientes.component';
+import { GenerarVentaComponent } from './generar-venta/generar-venta.component';
+
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ActualizarClientesComponent } from './actualizar-clientes/actualizar-cl
     PaginaPrincipalComponent,
     ListarClientesComponent,
     RegistrarClientesComponent,
-    ActualizarClientesComponent
+    ActualizarClientesComponent,
+    GenerarVentaComponent,
+ 
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,85 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+  
+     <div class="container-fluid">
+     
+       <a class="navbar-brand" href="#"><img title="Logo" src="../img/logo.png" width ="200px" height= "60px"></a>
+       
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="MenuPrincipal.html">Inicio</a>
+         </li>
+
+         <li class="nav-item dropdown">
+         
+           <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Mantemiento
+           </a>
+           
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <li><a class="dropdown-item" href="cargarProducto" >Productos</a></li>
+             <li><a class="dropdown-item"  routerLink="/listado" >Clientes</a></li>
+             <li><a class="dropdown-item" href="cargarEmpleado" >Empleados</a></li>
+
+           </ul>
+           
+         </li>  
+         
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" routerLink="/generarVenta">Ventas</a>
+         </li>
+           
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Reportes</a>
+            
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <li><a class="dropdown-item" href="/reporteUno" target="_blank">Ventas*Empleado</a></li>
+             <li><a class="dropdown-item" href="/reporteDos" target="_blank">TotalVenta*Empleado</a></li>
+             <li><a class="dropdown-item" href="/reporteTres" target="_blank">Producto*Categoria</a></li>
+             <li><a class="dropdown-item" href="/reporteCuatro" target="_blank" >Ventas*Cliente</a></li>
+             </ul>
+             
+         </li>
+
+       </ul>
+       
+       <div class="dropdown" th:if="${usuario != null}">
+       <button style="border:none; color:black;" class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <span th:text="${usuario.usuario}"></span>
+       </button>
+       <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
+           <a class="dropdown-item" href="#"><img src="img/usuario.jpg" alt="60" width="60"></a>
+           <a class="dropdown-item" href="#"><span th:text="${usuario.usuario}"></span></a>
+           <a class="dropdown-item" href="#"></a>
+   
+           <div class="dropdown-divider"></div>
+   
+           <form action="" method="post">
+               <button type="submit" class="dropdown-item" value="Salir">Salir</button>
+           </form>
+       </div>
+   </div>    
+   </div>
+  </div>
+  </nav>
+</header>
+
+
+
+
+
+
+
+
+
+<!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Menú</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +96,11 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/nuevo">Nuevo</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/generarVenta">Venta
+          </a>
+        </li>
       </ul>
     </div>
   </div>
-</nav>
+</nav>-->
