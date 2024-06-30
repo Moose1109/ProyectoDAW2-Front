@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { ActualizarClientesComponent } from './actualizar-clientes/actualizar-clientes.component';
 import { ListarProductoComponent } from './listar-producto/listar-producto.component';
 import { ActualizarProductoComponent } from './actualizar-producto/actualizar-producto.component';
+import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
+import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ActualizarProductoComponent } from './actualizar-producto/actualizar-pr
     RegistrarClientesComponent,
     ActualizarClientesComponent,
     ListarProductoComponent,
-    ActualizarProductoComponent
+    ActualizarProductoComponent,
+    RegistrarProductoComponent,
+    EliminarProductoComponent
   ],
   imports: [
     BrowserModule,
