@@ -15,6 +15,7 @@ import { ActualizarProductoComponent } from './actualizar-producto/actualizar-pr
 import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
 import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
 import { GenerarVentaComponent } from './generar-venta/generar-venta.component';
+import { EmpleadosMantenimientoComponent } from './empleados-mantenimiento/empleados-mantenimiento.component';
 
 
 
@@ -29,7 +30,8 @@ import { GenerarVentaComponent } from './generar-venta/generar-venta.component';
     ListarProductoComponent,
     ActualizarProductoComponent,
     EliminarProductoComponent,
-    RegistrarProductoComponent
+    RegistrarProductoComponent,
+    EmpleadosMantenimientoComponent
   ],
   imports: [
     BrowserModule,
