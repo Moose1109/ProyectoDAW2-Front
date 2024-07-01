@@ -15,17 +15,22 @@
 						<div class="form-group col-md-9">
 						
 							<label for="idcliente">Puesto</label> 
-							<select id="idcliente" class="form-control" name="idcliente" >
+							<select id="idcliente" class="form-control" name="idcliente">
 								<option value="-1">Seleccione...</option>
-								<option *ngFor="let c of cliente" [value]="c.idcliente" th:data-codigo="${c.idcliente}"  th:data-cliente="${c.nomcliente} + ' '+ ${c.apecliente}" th:data-dni="${c.dni}" th:data-telefono="${c.celular}">{{c.puesto +' ' + c.nomcliente}}"</option>
-                                <!--"-->
+								<option *ngFor="let c of cliente" [value]="c.idcliente" 
+									[attr.data-codigo]="c.idcliente" 
+									[attr.data-cliente]="c.nomcliente + ' ' + c.apecliente" 
+									[attr.data-dni]="c.dni" 
+									[attr.data-telefono]="c.celular">
+									{{c.puesto + ' ' + c.nomcliente}}
+								</option>
 							</select>
 							<br>
 							<div class="form-group d-flex">
 								
 								<div class="col-sm-5 ">
 									<label for="inputCli">Cliente</label>
-									<input type="text" id="nomcliente"  class="form-control" placeholder="Cliente" readonly>
+									<input type="text" id="nomcliente"   class="form-control" placeholder="Cliente" readonly>
 								</div>
 																			
 									<div class="col-sm-5">
@@ -35,7 +40,7 @@
 										    
 								    <div class="col-sm-5">
 										<label for="inputCli">celular</label>
-										<input type="text" id="telefono"  class="form-control" placeholder="Telefono" readonly>
+										<input type="text" id="telefono"   class="form-control" placeholder="Telefono" readonly>
 									</div>
 							</div>
 						

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Cliente } from '../model/cliente';
 import { ClienteService } from '../service/cliente.service';
 import { Router } from '@angular/router';
-import { Productos } from '../model/productos';
+import { Producto } from '../model/producto';
 import { ProductoService } from '../service/producto.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { ProductoService } from '../service/producto.service';
 export class GenerarVentaComponent {
 
   cliente : Cliente[] = [];
-  producto : Productos[] = []
+  producto : Producto[] = []
 
   constructor(private clienteService :ClienteService,
     private productoService : ProductoService,

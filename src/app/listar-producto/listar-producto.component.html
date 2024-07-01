@@ -1,0 +1,33 @@
+<app-pagina-principal></app-pagina-principal>
+
+<div class="container">
+  <br>
+  <h2 class="text-center">LISTADO DE PRODUCTOS</h2>
+
+  <br>
+  <table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Estado</th>
+        <th scope="col">ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of productos">
+        <th scope="row">{{d.codproducto}}</th>
+        <td>{{d.nomproducto}}</td>
+        <td>{{d.objCategoria.nomcategoria}}</td>
+        <td>{{d.precio}}</td>
+        <td>{{d.stock}}</td>
+        <td>{{d.estado}}</td>
+        <td><button (click)="editarProducto(d.codproducto)" class="btn btn-outline-success m-2">Editar</button>
+        <button (click)="eliminarProducto(d.codproducto)" class="btn btn-danger m-2">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
