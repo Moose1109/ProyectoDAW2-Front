@@ -4,6 +4,9 @@ import { ClienteService } from '../service/cliente.service';
 import { Router } from '@angular/router';
 import { Producto } from '../model/producto';
 import { ProductoService } from '../service/producto.service';
+import { Venta } from '../model/venta';
+import {ItemVenta} from '../model/item-venta';
+import { VentaService } from '../service/venta.service';
 
 @Component({
   selector: 'app-generar-venta',
@@ -17,6 +20,7 @@ export class GenerarVentaComponent {
 
   constructor(private clienteService :ClienteService,
     private productoService : ProductoService,
+    private ventaService : VentaService ,
     private Router:Router ) { }
 
   ngOnInit():void {
@@ -28,11 +32,145 @@ export class GenerarVentaComponent {
     });
   
   }
+
+
+  itemVenta: ItemVenta = new ItemVenta(0, '', '', 0, 0, 0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*-------------------------------------- JS-----------------------------------------------------------------------------------------------*/ 
+  selectedCliente = {
+    idcliente: '',
+    nomcliente: '',
+    dni: '',
+    telefono: ''
+  };
+
+  actualizarCamposCliente(event: any) {
+    const select = event.target;
+    const selectedOption = select.options[select.selectedIndex];
+
+    this.selectedCliente.idcliente = selectedOption.getAttribute('data-codigo') || '';
+    this.selectedCliente.nomcliente = selectedOption.getAttribute('data-cliente') || '';
+    this.selectedCliente.dni = selectedOption.getAttribute('data-dni') || '';
+    this.selectedCliente.telefono = selectedOption.getAttribute('data-telefono') || '';
+
+
+
+  }
+
+
+
+  selectedProducto = {
+    precio: '',
+    codigo: '',
+    stock: '',
+
+  };
+    actualizarCamposProductos(event: any) {
+      const select = event.target;
+      const selectedOption = select.options[select.selectedIndex];
   
+      this.selectedProducto.precio = selectedOption.getAttribute('data-precio') || '';
+      this.selectedProducto.stock = selectedOption.getAttribute('data-stock') || '';
+
+    }
+
+  };
+
+
+
   
+    /*-------------------------------------- JS-----------------------------------------------------------------------------------------------*/ 
   
   
 
 
 
-}
+
