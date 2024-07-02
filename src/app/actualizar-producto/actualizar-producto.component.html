@@ -1,1 +1,43 @@
-<p>actualizar-producto works!</p>
+<app-pagina-principal></app-pagina-principal>
+
+<div class="container">
+  <br>
+  <h1 class="text-center text-success">Actualizar Producto</h1>
+  <h4 class="text-left">Modifique los datos del Producto:</h4>
+
+  <form (ngSubmit)="actualizarProducto()">
+    <div class="form-group">
+      <label for="codproducto">ID:</label>
+      <input type="text" id="codproducto" [(ngModel)]="producto.codproducto" name="codproducto" class="form-control" placeholder="ID Cliente" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="nomproducto">Nombre:</label>
+      <input type="text" id="nomproducto" [(ngModel)]="producto.nomproducto" name="nomproducto" class="form-control" placeholder="Nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="idcategoria">Categoria:</label>
+      <input type="text" id="idcategoria" [(ngModel)]="producto.idcategoria" name="idcategoria" class="form-control" placeholder="Apellido" required>
+    </div>
+
+    <div class="form-group">
+      <label for="dni">Precio:</label>
+      <input type="text" id="dni" [(ngModel)]="producto.precio" name="dni" class="form-control" placeholder="DNI" required>
+    </div>
+
+    <div class="form-group">
+      <label for="stock">Stock:</label>
+      <input type="text" id="stock" [(ngModel)]="producto.stock" name="stock" class="form-control" placeholder="Dirección" required>
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" [(ngModel)]="producto.estado" name="estado" class="form-control" placeholder="Estado" required>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+  </div>
+  </form>
+</div>
