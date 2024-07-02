@@ -2,11 +2,24 @@
 
 <div class="container">
   <br>
-  <h2 class="text-center">LISTADO DE CLIENTES</h2>
+  <h2 class="text-center" style="margin: 30px;">LISTADO DE CLIENTES</h2>
 
+  <form (ngSubmit)="buscarCliente()" class="row g-4">
+    <div class="col-auto">
+      <input type="text" name="idClienteBuscar" [(ngModel)]="idClienteBuscar" class="form-control" placeholder="Id de Cliente">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-info">Consultar</button>
+    </div>
+  </form>
+  <br>
+  <div class="col-auto text-left">
+    <button (click)="navegarARegistrar()" class="btn btn-success">Registrar Cliente</button>
+  </div>
+  <br>
   <br>
   <table class="table table-striped table-hover align-middle">
-    <thead class="table-dark">
+    <thead class="table-dark text-center">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">NOMBRE</th>
@@ -29,11 +42,12 @@
         <td>{{ c.celular }}</td>
         <td>{{ c.puesto }}</td>
         <td>{{ c.estado }}</td>
-        <td><button (click)="editarCliente(c.idcliente)" class="btn btn-outline-danger">Editar</button></td>
+        <td><button (click)="editarCliente(c.idcliente)" class="btn btn-success">Editar</button></td>
         <td><button (click)="eliminarCliente(c.idcliente)" class="btn btn-danger">Eliminar</button></td>
       </tr>
     </tbody>
   </table>
 </div>
+
 
 
