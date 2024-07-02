@@ -1,0 +1,78 @@
+<app-pagina-principal></app-pagina-principal>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6 col-sm-4">
+            <h1>Mantenimiento Empleados</h1>
+            <form class="row g-3" (ngSubmit)="agregarEmpleados()">
+                <div class="form-group my-2">
+                    <label for="idempleado">Código</label>
+                    <input type="text" class="form-control" id="idempleado" name="idempleado" placeholder="Código" 
+                    [(ngModel)]="nuevoEmpleado.idempleado">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="nomempleado" class="form-label">Nombre</label>
+                    <input type="text" name="nomempleado" class="form-control" id="nomempleado" [(ngModel)]="nuevoEmpleado.nomempleado" placeholder="Nombre del Empleado">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="apeempleado" class="form-label">Apellido</label>
+                    <input type="text" name="apeempleado" class="form-control" id="apeempleado" [(ngModel)]="nuevoEmpleado.apeempleado" placeholder="Apellido del Empleado">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="dni" class="form-label">Dni</label>
+                    <input type="text" name="dni" class="form-control" id="dni" [(ngModel)]="nuevoEmpleado.dni" placeholder="Dni del Empleado">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="fechanacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <input type="text" name="fechanacimiento" class="form-control" id="fechanacimiento" [(ngModel)]="nuevoEmpleado.fechanacimiento" placeholder="Fecha de Nacimiento">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input type="text" name="usuario" class="form-control" id="usuario" [(ngModel)]="nuevoEmpleado.usuario" placeholder="Usuario">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="pass" class="form-label">Contraseña</label>
+                    <input type="text" name="pass" class="form-control" id="pass" [(ngModel)]="nuevoEmpleado.pass" placeholder="Contraseña">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="estado" class="form-label">Estado</label>
+                    <input type="text" name="estado" class="form-control" id="estado" [(ngModel)]="nuevoEmpleado.estado" placeholder="Estado">
+                </div>
+                <button type="submit" class="btn btn-primary my-3">Registrar</button>
+            </form>
+        </div>
+
+        <div class="col-6 col-sm-7">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Dni</th>
+                        <th scope="col">Fecha Nacimiento</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Contraseña</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let objEmpleados of empleados">
+                        <th scope="row">{{objEmpleados.idempleado}}</th>
+                        <td>{{objEmpleados.nomempleado}}</td>
+                        <td>{{objEmpleados.apeempleado}}</td>
+                        <td>{{objEmpleados.dni}}</td>
+                        <td>{{objEmpleados.fechanacimiento}}</td>
+                        <td>{{objEmpleados.usuario}}</td>
+                        <td>{{objEmpleados.pass}}</td>
+                        <td>{{objEmpleados.estado}}</td>
+                        <td>
+                            <a (click)="buscarEmpleado(objEmpleados.idempleado)" class="btn btn-success">Editar</a> |
+                            <a (click)="eliminarEmpleado(objEmpleados.idempleado)" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

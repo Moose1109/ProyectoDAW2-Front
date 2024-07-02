@@ -7,6 +7,7 @@ import { ListarProductoComponent } from './listar-producto/listar-producto.compo
 import { GenerarVentaComponent } from './generar-venta/generar-venta.component';
 import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
+import { EmpleadosMantenimientoComponent } from './empleados-mantenimiento/empleados-mantenimiento.component';
 
 const routes: Routes = [
   {path: '', component: PaginaPrincipalComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'editar/:idcliente', component: ActualizarClientesComponent },
   { path: 'generarVenta', component: GenerarVentaComponent },
   { path: 'listProducto', component: ListarProductoComponent},
+  { path: 'empleados', component: EmpleadosMantenimientoComponent},
 
 ];
 
