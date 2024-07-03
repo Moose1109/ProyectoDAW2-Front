@@ -19,9 +19,10 @@ export class ProductoService {
   }
 
 
-  public registrar(producto: Producto): Observable<any> {
+  public registrar(producto: Producto): Observable<Producto> {
     return this.http.post<Producto>(this.baseUrl, producto);
   }
+
 
   public buscar(id:string): Observable<Producto> {
     return this.http.get<Producto>(this.baseUrl + `/${id}`);

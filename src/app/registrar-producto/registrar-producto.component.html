@@ -5,7 +5,8 @@
   <h1 class="text-center">Producto</h1>
   <h4 class="text-left">Ingrese los datos:</h4>
 
-  <form class="row g-3">
+  <form class="row g-3" (ngSubmit)="agregarProducto()">
+
     <div class="col-md-6 d-flex align-items-center mb-3">
       <label for="codproducto" class="form-label me-2 mb-0">Código</label>
       <input type="text" class="form-control" id="codproducto" name="codproducto" placeholder="Ingrese Codigo" required>
