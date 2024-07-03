@@ -1,34 +1,34 @@
 <app-pagina-principal></app-pagina-principal>
 
-<div class="container">
+<div class="container mt-4 p-3" style="width: 40%; border: 1px solid blue; background-color: bisque;">
   <br>
-  <h1 class="text-center text-success">Actualizar Producto</h1>
-  <h4 class="text-left">Modifique los datos del Producto:</h4>
+  <h1 class="text-center">ACTUALIZAR PRODUCTO</h1>
+  <h5 class="text-center">Modificar datos del Producto</h5>
 
   <form (ngSubmit)="actualizarProducto()">
     <div class="form-group">
       <label for="codproducto">ID:</label>
-      <input type="text" id="codproducto" [(ngModel)]="producto.codproducto" name="codproducto" class="form-control" placeholder="ID Cliente" readonly>
+      <input type="text" id="codproducto" [(ngModel)]="producto.codproducto" name="codproducto" class="form-control" placeholder="ID Producto" readonly>
     </div>
 
     <div class="form-group">
       <label for="nomproducto">Nombre:</label>
-      <input type="text" id="nomproducto" [(ngModel)]="producto.nomproducto" name="nomproducto" class="form-control" placeholder="Nombre" required>
+      <input type="text" id="nomproducto" [(ngModel)]="producto.nomproducto" name="nomproducto" class="form-control" placeholder="Nombre Producto" required>
     </div>
 
     <div class="form-group">
       <label for="idcategoria">Categoria:</label>
-      <input type="text" id="idcategoria" [(ngModel)]="producto.idcategoria" name="idcategoria" class="form-control" placeholder="Apellido" required>
+      <input type="text" id="idcategoria" [(ngModel)]="producto.idcategoria" name="idcategoria" class="form-control" placeholder="Categoria" required>
     </div>
 
     <div class="form-group">
       <label for="dni">Precio:</label>
-      <input type="text" id="dni" [(ngModel)]="producto.precio" name="dni" class="form-control" placeholder="DNI" required>
+      <input type="text" id="dni" [(ngModel)]="producto.precio" name="dni" class="form-control" placeholder="Precio" required>
     </div>
 
     <div class="form-group">
       <label for="stock">Stock:</label>
-      <input type="text" id="stock" [(ngModel)]="producto.stock" name="stock" class="form-control" placeholder="Dirección" required>
+      <input type="text" id="stock" [(ngModel)]="producto.stock" name="stock" class="form-control" placeholder="Stock" required>
     </div>
 
     <div class="form-group">
@@ -36,8 +36,9 @@
       <input type="text" id="estado" [(ngModel)]="producto.estado" name="estado" class="form-control" placeholder="Estado" required>
     </div>
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Actualizar</button>
+    <div class="col-12 my-2 text-center">
+      <button type="submit" class="btn btn-success w-25 mx-3">Actualizar</button>
+      <button type="submit" (click)="listarProducto()" class="btn btn-warning w-25 mx-3">Regresar</button>
   </div>
   </form>
 </div>

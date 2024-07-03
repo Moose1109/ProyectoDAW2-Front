@@ -20,6 +20,10 @@ export class ListarProductoComponent implements OnInit{
   ) { }
 
   ngOnInit() {
+    this.listarProducto();
+  }
+
+  listarProducto(){
     this.productoService.listar().subscribe(data => {
       this.productos = data;
     });
@@ -63,5 +67,9 @@ export class ListarProductoComponent implements OnInit{
 
   navegarARegistrar() {
     this.router.navigate(['/nuevoProd']);
+  }
+
+  navegarAListar() {
+    this.router.navigate(['/listProducto']);
   }
 }

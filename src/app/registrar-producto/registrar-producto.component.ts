@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
 export class RegistrarProductoComponent {
 
   nuevoProducto: Producto = {
-    codproducto: '',
-    nomproducto: '',
-    idcategoria: 0,
-    precio: 0,
-    stock: 0,
-    estado: 1,
-    objCategoria: {idcategoria: 1, nomcategoria: ''}
+    "codproducto": '',
+    "nomproducto": '',
+    "idcategoria": 0,
+    "precio": 0,
+    "stock": 0,
+    "estado": 1,
+    /*objCategoria: {idcategoria: 1, nomcategoria: ''}*/
   };
 
   productos: Producto[] = [];
@@ -37,34 +37,20 @@ export class RegistrarProductoComponent {
     });
   }
 
-  registrarProducto(){
-    this.productoService.registrar(this.nuevoProducto).subscribe(
-      {
-        next: (datos) => {
-          console.log('Producto registrado con éxito', datos);
-          this.irListaProductos();
-        },
-        error: (error: any) => {
-          console.error('Error al registrar el producto', error);
-        }
-      }
-    );
-  }
-
-  agregarProducto(): void {
+  registrarProducto(): void {
     this.productoService.registrar(this.nuevoProducto).subscribe(response => {
-      console.log('Evento registrado con éxito:', response);
+      console.log('Producto registrado con éxito:', response);
       this.productos.push(response); // Agrega el nuevo evento a la lista
       this.nuevoProducto = {
-        codproducto: '',
-        nomproducto: '',
-        idcategoria: 0,
-        precio: 0,
-        stock: 0,
-        estado: 1,
-        objCategoria: {idcategoria: 1, nomcategoria: ''}
+        "codproducto": '',
+        "nomproducto": '',
+        "idcategoria": 0,
+        "precio": 0,
+        "stock": 0,
+        "estado": 1,
+        /*objCategoria: {idcategoria: 1, nomcategoria: ''}*/
       }
-      this.router.navigate(['listProducto']);
+      this.router.navigate(['/listProducto']);
       this.listarProductos();
 
     }, error => {
@@ -75,9 +61,4 @@ export class RegistrarProductoComponent {
   irListaProductos() {
     this.router.navigate(['/listProducto']);
   }
-
-
-
-
-
 }

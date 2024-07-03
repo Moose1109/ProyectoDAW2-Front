@@ -17,9 +17,11 @@ export class ActualizarProductoComponent {
     "precio": 0,
     "stock": 0,
     "estado": 1,
-    "objCategoria": {idcategoria: 1, nomcategoria: ''}
+    /*"objCategoria": {idcategoria: 1, nomcategoria: ''}*/
   };
 
+  productos: Producto[] = [];
+  
   constructor(private route: ActivatedRoute,
     private router: Router,
     private productoService: ProductoService
@@ -27,6 +29,12 @@ export class ActualizarProductoComponent {
 
   ngOnInit() {
     this.obtenerProducto();
+  }
+
+  listarProducto(){
+    this.productoService.listar().subscribe(data => {
+      this.productos = data;
+    });
   }
 
   obtenerProducto() {
