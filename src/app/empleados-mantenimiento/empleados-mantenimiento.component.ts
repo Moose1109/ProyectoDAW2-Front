@@ -19,15 +19,15 @@ export class EmpleadosMantenimientoComponent implements OnInit {
     fechanacimiento: '',
     usuario: '',
     pass: '',
-    estado: 0, 
-   
+    estado: 0,
+
   };
 
 
   empleados: Empleados[] = [];
 
   // Constructor
-  constructor(private empleadosService: EmpleadosService, 
+  constructor(private empleadosService: EmpleadosService,
     private router: Router
   ) {}
   ngOnInit(): void {
@@ -52,15 +52,16 @@ export class EmpleadosMantenimientoComponent implements OnInit {
         fechanacimiento: '',
         usuario: '',
         pass: '',
-        estado: 0, 
+        estado: 0,
       }
       this.router.navigate(['eventos']);
       this.listarEmpleados();
-      
+
     }, error => {
       console.error('Error al registrar el evento:', error);
     });
   }
+
   buscarEmpleado(id: string) {
     this.empleadosService.buscar(id).subscribe(data =>{
       this.nuevoEmpleado = data
@@ -73,7 +74,7 @@ export class EmpleadosMantenimientoComponent implements OnInit {
       console.log('Evento eliminado:' + Response);
       this.listarEmpleados();
       this.router.navigate(['empleados']);
-    }, 
+    },
     error => {
       console.error('Error al registrar el empleado:', error);
     });

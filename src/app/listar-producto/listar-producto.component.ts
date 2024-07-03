@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Producto } from '../model/producto';
 import { ProductoService } from '../service/producto.service';
 import { Router } from '@angular/router';
@@ -9,24 +9,32 @@ import { Router } from '@angular/router';
   styleUrl: './listar-producto.component.css'
 })
 
-export class ListarProductoComponent {
+export class ListarProductoComponent implements OnInit{
 
-  productos: Producto[] =[];
+  productos: Producto[] = [];
+  idProductoBuscar: string = '';
 
-  constructor(private productoService:ProductoService, private router: Router){}
+  constructor(
+    private productoService: ProductoService,
+    private router: Router
+  ) { }
 
-  ngOnInit(): void{
+  ngOnInit() {
+    this.listarProducto();
+  }
+
+  listarProducto(){
     this.productoService.listar().subscribe(data => {
       this.productos = data;
     });
-
   }
-  editarProducto(codproducto: string){
-    this.router.navigate(['/editar', codproducto])
-  };
+
+  editarProducto(codproducto: string) {
+    this.router.navigate(['/editarProd', codproducto]);
+  }
 
   eliminarProducto(id: string): void {
-    if (confirm('¿Está seguro de eliminar este cliente?')) {
+    if (confirm('¿Está seguro de eliminar este producto?')) {
       this.productoService.eliminar(id).subscribe(
         () => {
           this.productos = this.productos.filter(c => c.codproducto !== id);
@@ -39,5 +47,29 @@ export class ListarProductoComponent {
     }
   }
 
+  buscarProducto() {
+    if (this.idProductoBuscar) {
+      this.productoService.buscar(this.idProductoBuscar).subscribe(
+        producto => {
+          this.productos = [producto];
+        },
+        error => {
+          console.error('Error al buscar producto:', error);
+          alert('Producto no encontrado');
+        }
+      );
+    } else {
+      this.productoService.listar().subscribe(data => {
+        this.productos = data;
+      });
+    }
+  }
 
+  navegarARegistrar() {
+    this.router.navigate(['/nuevoProd']);
+  }
+
+  navegarAListar() {
+    this.router.navigate(['/listProducto']);
+  }
 }

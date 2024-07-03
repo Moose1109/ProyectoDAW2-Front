@@ -8,6 +8,6 @@ export interface Producto {
   stock: number;
   estado: number;
 
-  objCategoria: Categoria;
+  /*objCategoria: Categoria;*/
 
 }

@@ -16,7 +16,6 @@
   import { ListarProductoComponent } from './listar-producto/listar-producto.component';
   import { ActualizarProductoComponent } from './actualizar-producto/actualizar-producto.component';
   import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
-  import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
   import { GenerarVentaComponent } from './generar-venta/generar-venta.component';
   import { EmpleadosMantenimientoComponent } from './empleados-mantenimiento/empleados-mantenimiento.component';
 
@@ -32,7 +31,6 @@
       GenerarVentaComponent,
       ListarProductoComponent,
       ActualizarProductoComponent,
-      EliminarProductoComponent,
       RegistrarProductoComponent,
       EmpleadosMantenimientoComponent
     ],

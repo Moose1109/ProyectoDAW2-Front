@@ -8,13 +8,16 @@
   import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
   import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
   import { EmpleadosMantenimientoComponent } from './empleados-mantenimiento/empleados-mantenimiento.component';
+  import { ActualizarProductoComponent } from './actualizar-producto/actualizar-producto.component';
 
   const routes: Routes = [
     {path: '', component: PaginaPrincipalComponent},
     { path: '', redirectTo: '/listado', pathMatch: 'full' },
     { path: 'listado', component: ListarClientesComponent },
     { path: 'nuevo', component: RegistrarClientesComponent },
+    { path: 'nuevoProd', component: RegistrarProductoComponent },
     { path: 'editar/:idcliente', component: ActualizarClientesComponent },
+    { path: 'editarProd/:codproducto', component: ActualizarProductoComponent },
     { path: 'generarVenta', component: GenerarVentaComponent },
     { path: 'listProducto', component: ListarProductoComponent},
     { path: 'empleados', component: EmpleadosMantenimientoComponent},

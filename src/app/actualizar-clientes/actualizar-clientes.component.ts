@@ -37,7 +37,7 @@ export class ActualizarClientesComponent {
       error => {
         console.error('Error al obtener el cliente', error)}
     );
-  }
+  };
 
   actualizarCliente() {
 

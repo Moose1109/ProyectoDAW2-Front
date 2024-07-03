@@ -21,7 +21,6 @@ export class RegistrarClientesComponent {
   };
 
 
-  
   constructor(
     private clienteService: ClienteService,
     private router: Router

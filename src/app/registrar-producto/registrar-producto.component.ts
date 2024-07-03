@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Producto } from '../model/producto';
+import { ProductoService } from '../service/producto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar-producto',
@@ -7,4 +10,55 @@ import { Component } from '@angular/core';
 })
 export class RegistrarProductoComponent {
 
+  nuevoProducto: Producto = {
+    "codproducto": '',
+    "nomproducto": '',
+    "idcategoria": 0,
+    "precio": 0,
+    "stock": 0,
+    "estado": 1,
+    /*objCategoria: {idcategoria: 1, nomcategoria: ''}*/
+  };
+
+  productos: Producto[] = [];
+
+  constructor(
+    private productoService: ProductoService,
+    private router: Router
+  ) {}
+
+  onSubmit() {
+    this.registrarProducto();
+  }
+
+  listarProductos(): void {
+    this.productoService.listar().subscribe(data => {
+      this.productos = data;
+    });
+  }
+
+  registrarProducto(): void {
+    this.productoService.registrar(this.nuevoProducto).subscribe(response => {
+      console.log('Producto registrado con éxito:', response);
+      this.productos.push(response); // Agrega el nuevo evento a la lista
+      this.nuevoProducto = {
+        "codproducto": '',
+        "nomproducto": '',
+        "idcategoria": 0,
+        "precio": 0,
+        "stock": 0,
+        "estado": 1,
+        /*objCategoria: {idcategoria: 1, nomcategoria: ''}*/
+      }
+      this.router.navigate(['/listProducto']);
+      this.listarProductos();
+
+    }, error => {
+      console.error('Error al registrar el producto:', error);
+    });
+  }
+
+  irListaProductos() {
+    this.router.navigate(['/listProducto']);
+  }
 }

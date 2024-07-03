@@ -1,1 +1,45 @@
-<p>registrar-producto works!</p>
+<app-pagina-principal></app-pagina-principal>
+
+<div class="container mt-4 p-3" style="width: 40%; border: 1px solid blue; background-color: rgb(192, 247, 195);">
+  <br>
+  <h1 class="text-center">Registrar Producto</h1>
+  <h4 class="text-center">Ingreso de datos</h4>
+
+  <form class="row g-3 mt-3" (ngSubmit)="registrarProducto()">
+
+    <div class="col-md-6 d-flex align-items-center mb-3">
+      <label for="nomproducto" class="form-label me-2 mb-0">Nombre</label>
+      <input type="text" name="nomproducto" class="form-control" id="nomproducto"
+      placeholder="Nombre" [(ngModel)]="nuevoProducto.nomproducto">
+    </div>
+
+    <div class="col-md-6 d-flex align-items-center mb-3">
+      <label for="idcategoria" class="form-label me-2 mb-0">Categoria</label>
+      <input type="text" name="idcategoria" class="form-control" id="idcategoria"
+      placeholder="Categoria" [(ngModel)]="nuevoProducto.idcategoria">
+    </div>
+
+    <div class="col-md-6 d-flex align-items-center mb-3">
+      <label for="precio" class="form-label me-2 mb-0">Precio</label>
+      <input type="text" name="precio" class="form-control" id="precio"
+      placeholder="Precio" [(ngModel)]="nuevoProducto.precio">
+    </div>
+
+    <div class="col-md-6 d-flex align-items-center mb-3">
+      <label for="stock" class="form-label me-2 mb-0">Stock</label>
+      <input type="text" name="stock" class="form-control" id="stock"
+      placeholder="Stock" [(ngModel)]="nuevoProducto.stock">
+    </div>
+
+    <div class="col-md-6 d-flex align-items-center mb-3">
+      <label for="estado" class="form-label me-2 mb-0">Estado</label>
+      <input type="number" name="estado" class="form-control" id="estado"
+      placeholder="Estado" [(ngModel)]="nuevoProducto.estado">
+    </div>
+
+    <div class="col-12 my-2 text-center">
+      <button type="submit" class="btn btn-success w-25 mx-3">Registrar</button>
+      <button type="submit" (click)="listarProductos()" class="btn btn-warning w-25 mx-3">Regresar</button>
+    </div>
+  </form>
+</div>
