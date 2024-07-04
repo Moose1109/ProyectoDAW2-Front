@@ -19,9 +19,15 @@ export class ListarClientesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.clienteService.listar().subscribe(data => {
-      this.clientes = data;
-    });
+    this.clienteService.listar().subscribe(
+      data => {
+        this.clientes = data.filter(cliente => cliente !== null);
+      },
+      error => {
+        console.error('Error al cargar los clientes', error);
+        this.clientes = [];
+      }
+    );
   }
 
   editarCliente(idcliente: string) {
@@ -64,6 +70,7 @@ export class ListarClientesComponent implements OnInit {
     this.router.navigate(['/nuevo']);
   }
 }
+
 
 
 

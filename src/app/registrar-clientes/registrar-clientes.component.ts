@@ -30,7 +30,7 @@ export class RegistrarClientesComponent {
     this.registrarCliente();
   }
 
-  registrarCliente(){
+  registrarCliente() {
     this.clienteService.registar(this.nuevoCliente).subscribe({
       next: (datos) => {
         console.log('Cliente registrado con éxito', datos);
@@ -46,8 +46,6 @@ export class RegistrarClientesComponent {
     this.router.navigate(['/listado']);
   }
 }
-
-
-
+  
 
 
