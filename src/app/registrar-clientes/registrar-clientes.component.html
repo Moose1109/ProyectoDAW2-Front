@@ -5,51 +5,53 @@
   <h1 class="text-center">Modulo Cliente</h1>
   <h4 class="text-left">Por favor, ingrese los datos:</h4>
 
-  <form class="row g-3">
+  <form class="row g-3" (ngSubmit)="onSubmit()" #clienteForm="ngForm">
     <div class="col-md-6 d-flex align-items-center mb-3">
       <label for="idcliente" class="form-label me-2 mb-0">ID</label>
-      <input type="text" class="form-control" id="idcliente" name="id_prod" placeholder="Ingrese ID" required>
+      <input type="text" class="form-control" id="idcliente" name="idcliente" [(ngModel)]="nuevoCliente.idcliente" placeholder="Ingrese ID" required>
     </div>
 
     <div class="col-md-6 d-flex align-items-center mb-3">
       <label for="nomcliente" class="form-label me-2 mb-0">Nombre</label>
-      <input type="text" name="nomcliente" class="form-control" id="nomcliente" placeholder="Nombre">
+      <input type="text" name="nomcliente" class="form-control" id="nomcliente" [(ngModel)]="nuevoCliente.nomcliente" placeholder="Nombre">
     </div>
 
     <div class="col-md-6 d-flex align-items-center mb-3">
       <label for="apecliente" class="form-label me-2 mb-0">Apellido</label>
-      <input type="text" name="apecliente" class="form-control" id="apecliente" placeholder="Apellido">
+      <input type="text" name="apecliente" class="form-control" id="apecliente" [(ngModel)]="nuevoCliente.apecliente" placeholder="Apellido">
     </div>
 
     <div class="col-md-6 d-flex align-items-center mb-3">
       <label for="dni" class="form-label me-2 mb-0">DNI</label>
-      <input type="text" name="dni" class="form-control" id="dni" placeholder="DNI">
+      <input type="text" name="dni" class="form-control" id="dni" [(ngModel)]="nuevoCliente.dni" placeholder="DNI">
     </div>
 
     <div class="col-md-6 d-flex align-items-center mb-3">
-      <label for="Direccion" class="form-label me-2 mb-0">Direccion</label>
-      <input type="text" name="Direccion" class="form-control" id="Direccion" placeholder="Direccion">
+      <label for="direccion" class="form-label me-2 mb-0">Direccion</label>
+      <input type="text" name="direccion" class="form-control" id="direccion" [(ngModel)]="nuevoCliente.direccion" placeholder="Direccion">
     </div>
 
     <div class="col-md-6 d-flex align-items-center mb-3">
       <label for="celular" class="form-label me-2 mb-0">Celular</label>
-      <input type="text" name="celular" class="form-control" id="celular" placeholder="Celular">
+      <input type="text" name="celular" class="form-control" id="celular" [(ngModel)]="nuevoCliente.celular" placeholder="Celular">
     </div>
 
     <div class="col-md-6 d-flex align-items-center mb-3">
       <label for="puesto" class="form-label me-2 mb-0">Puesto</label>
-      <input type="text" name="puesto" class="form-control" id="puesto" placeholder="Puesto">
+      <input type="text" name="puesto" class="form-control" id="puesto" [(ngModel)]="nuevoCliente.puesto" placeholder="Puesto">
     </div>
 
     <div class="col-md-6 d-flex align-items-center mb-3">
       <label for="estado" class="form-label me-2 mb-0">Estado</label>
-      <input type="number" name="estado" class="form-control" id="estado" placeholder="Estado">
+      <input type="number" name="estado" class="form-control" id="estado" [(ngModel)]="nuevoCliente.estado" placeholder="Estado">
     </div>
 
     <div class="col-12">
-      <button type="submit" routerLink="/listado" class="btn btn-primary">Registrar</button>
+      <button type="submit" class="btn btn-primary">Registrar</button>
     </div>
   </form>
 </div>
+
+
 
 

@@ -24,6 +24,7 @@ export class EmpleadosMantenimientoComponent implements OnInit {
   };
 
 
+
   empleados: Empleados[] = [];
 
   // Constructor
