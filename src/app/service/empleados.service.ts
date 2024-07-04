@@ -27,5 +27,15 @@ export class EmpleadosService {
   public eliminar(id: string): Observable<void> {
     return this.http.delete<void>(`${this.urlBase}/${id}`);
 
-}
+  }
+
+  public login(usuario: string, pass: string): Observable<any> {
+    return this.http.post<any>(`${this.urlBase}/login`, {}, {
+      params: {
+        usuario: usuario,
+        pass: pass
+      },
+      observe: 'response'
+    });
+  }
 }

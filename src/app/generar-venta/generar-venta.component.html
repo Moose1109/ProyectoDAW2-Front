@@ -7,7 +7,7 @@
 			<div class="col-sm-4">		
 				<div class="card">
 				
-					<form action="/guardarDetalleProducto" method="post">	
+					<form (ngSubmit)="agregarItemVenta()" >	
 						<div class="card-body">
 							<div class="form-group">
 								<label>Datos del Cliente</label>
@@ -16,7 +16,7 @@
 						<div class="form-group col-md-9">
 						
 							<label for="idcliente">Puesto</label> 
-							<select id="idcliente" class="form-control" name="idcliente" (change)="actualizarCamposCliente($event)" >
+							<select id="idcliente" class="form-control" name="idcliente" (change)="actualizarCamposCliente($event)" [(ngModel)]="itemVenta.codproducto" >
 								<option value="-1">Seleccione...</option>
 								<option *ngFor="let c of cliente" [value]="c.idcliente" 
 									[attr.data-codigo]="c.idcliente" 
@@ -69,17 +69,17 @@
 									<div class="form-group d-flex">
 										<div class="col-sm-4 ">
 											<label for="inputCat">Precio</label>
-									        <input type="number" id="precio"  name="precio" [(ngModel)]="selectedProducto.precio" class="form-control" placeholder="S/.0.00" readonly>
+									        <input type="number" id="precio"  name="precio" [(ngModel)]="itemVenta.precio" [(ngModel)]="selectedProducto.precio" class="form-control" placeholder="S/.0.00" readonly>
 									    </div>
 																		
 									      <div class="col-sm-4">
 									        <label for="inputCat">Cantidad</label>
-									        <input type="text" name="cantidad"  class="form-control" placeholder="Cantidad">
+									        <input type="text" name="cantidad" [(ngModel)]="itemVenta.cantidad"  class="form-control" placeholder="Cantidad">
 									    </div>
 									    
 									    <div class="col-sm-3">
 										     <label for="inputCat">Stock</label>
-									        <input type="number" id="stock"  name="stock" [(ngModel)]="selectedProducto.stock"  class="form-control" placeholder="Stock" readonly>
+									        <input type="number" id="stock"  name="stock"  [(ngModel)]="selectedProducto.stock"  class="form-control" placeholder="Stock" readonly>
 									    </div>
 									</div>
 								</div>
@@ -125,13 +125,13 @@
 							</thead>
 							
 							<tbody >
-							    <tr th:each="item, itemStat : ${listado}">
-							        <td th:text="${itemStat.index + 1}"></td>
-							        <td th:text="${item.codproducto}"></td>
-							        <td th:text="${item.nomproducto}"></td>  
-							        <td th:text="${item.precio}"></td>
-							        <td th:text="${item.cantidad}"></td>
-							        <td th:text="${item.precioventa}"></td>
+								<tr *ngFor="let item of itemVentas; let i = index">
+									<td>{{ i + 1 }}</td>
+									<td>{{ item.codproducto }}</td>
+									<td>{{ item.nomproducto }}</td>
+									<td>{{ item.precio }}</td>
+									<td>{{ item.cantidad }}</td>
+									<td>{{ item.precioventa }}</td>
 							        <td class="d-flex">
 							            <a th:href="@{'/eliminarItem/'+ ${itemStat.index}}" class="btn btn-danger" style="margin-left:10px;">Eliminar</a>
 							        </td>

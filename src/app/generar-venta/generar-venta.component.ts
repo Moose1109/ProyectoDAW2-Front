@@ -7,6 +7,7 @@ import { ProductoService } from '../service/producto.service';
 import { Venta } from '../model/venta';
 import {ItemVenta} from '../model/item-venta';
 import { VentaService } from '../service/venta.service';
+import { error } from 'node:console';
 
 @Component({
   selector: 'app-generar-venta',
@@ -17,6 +18,7 @@ export class GenerarVentaComponent {
 
   cliente : Cliente[] = [];
   producto : Producto[] = []
+  itemVentas : ItemVenta[] =[]
 
   constructor(private clienteService :ClienteService,
     private productoService : ProductoService,
@@ -30,6 +32,8 @@ export class GenerarVentaComponent {
     this.productoService.listar().subscribe(data => {
       this.producto = data;
     });
+
+
   
   }
 
@@ -38,89 +42,23 @@ export class GenerarVentaComponent {
 
 
 
+  eliminarItem(item:number){};
 
 
 
 
+    agregarItemVenta(): void {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      this.ventaService.guardarDetalleProducto(this.itemVenta).subscribe(
+        response => {
+          console.log('Detalle agregado con éxito:', response);
+          this.itemVentas.push(this.itemVenta);
+          this.itemVenta = new ItemVenta(0, '', '', 0, 0, 0);
+        },error => {
+          console.error('Error al agregar el detalle:', error);
+        }
+      )
+    }
 
 
 

@@ -55,7 +55,7 @@ export class EmpleadosMantenimientoComponent implements OnInit {
         pass: '',
         estado: 0,
       }
-      this.router.navigate(['eventos']);
+      this.router.navigate(['empleados']);
       this.listarEmpleados();
 
     }, error => {
