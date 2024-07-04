@@ -1,12 +1,12 @@
 <app-pagina-principal></app-pagina-principal>
 <div class="container mt-3">
     <div class="row">
-        <div class="col-6 col-sm-4">
+        <div class="col-6 col-sm-4" style="background-color: rgb(192, 224, 252);">
             <h1>Mantenimiento Empleados</h1>
             <form class="row g-3" (ngSubmit)="agregarEmpleados()">
                 <div class="form-group my-2">
                     <label for="idempleado">Código</label>
-                    <input type="text" class="form-control" id="idempleado" name="idempleado" placeholder="Código" 
+                    <input type="text" class="form-control" id="idempleado" name="idempleado" placeholder="Código"
                     [(ngModel)]="nuevoEmpleado.idempleado">
                 </div>
                 <div class="form-group col-md-12 my-2">
