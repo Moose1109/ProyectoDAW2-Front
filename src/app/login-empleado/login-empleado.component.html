@@ -1,0 +1,55 @@
+<div class="login-container text-center" style="height: 100vh; display: flex; justify-content: center; align-items: center; background-image: url('https://marketplace.canva.com/EAFgo6jjDzU/1/0/1600w/canva-blue-illustration-mountain-forest-desktop-wallpaper-q8SYQuDCPkk.jpg'); background-size: cover; background-position: center;">
+    <div style="width: 20%; background-color: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 10px;">
+        <h1 class="mb-4" style="color: #007bff; font-family: 'Arial', sans-serif; font-weight: bold;">NEPTUN SALES SYSTEM</h1>
+        <form (ngSubmit)="ingresar()">
+            <div class="mb-3">
+                <label for="correo" class="form-label visually-hidden">Correo</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-primary"><i class="bi bi-envelope-fill text-light"></i></span>
+                    <input required placeholder="Ingrese su correo" type="email" class="form-control" id="correo" name="correo" [(ngModel)]="usuario">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="clave" class="form-label visually-hidden">Contraseña</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-primary"><i class="bi bi-lock-fill text-light"></i></span>
+                    <input required placeholder="Ingrese su contraseña" type="password" class="form-control" id="clave" name="clave" [(ngModel)]="pass">
+                </div>
+            </div>
+            <div *ngIf="error" class="error-message text-danger mb-3">{{ error }}</div>
+            <button type="submit" class="btn btn-primary btn-lg">
+                <i class="bi bi-door-open-fill"></i> Ingresar
+            </button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- 
+<div class="login-container ">
+    <h1>Login</h1>
+    <form class="row g-3"  (ngSubmit)="ingresar()">
+        <div class="col-md-12">
+          <label for="correo" class="form-label">Correo</label>
+          <input required placeholder="P0000" type="text" class="form-control" id="correo" name="correo"  [(ngModel)] ="usuario">
+        </div>
+        <div class="col-md-12">
+          <label for="clave" class="form-label">Clave</label>
+          <input required placeholder="Nombre o descripcion" type="password" class="form-control" id="clave" name="clave"  [(ngModel)] ="pass">
+        </div>
+        <div *ngIf="error" class="error-message">{{ error }}</div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">ingresar</button>
+        </div>
+      </form>
+      <div class="text-center mt-3">
+        ¿No tienes una cuenta? <a routerLink="/regusu">Regístrate aquí</a>
+        </div>
+        
+        
+</div> -->

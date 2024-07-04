@@ -12,23 +12,23 @@
 import { ReporteClienteComponent } from './reporte-cliente/reporte-cliente.component';
 import { ReporteEmpleadoComponent } from './reporte-empleado/reporte-empleado.component';
 import { ReporteProductoComponent } from './reporte-producto/reporte-producto.component';
+import { LoginEmpleadoComponent } from './login-empleado/login-empleado.component';
 
-  const routes: Routes = [
-    {path: '', component: PaginaPrincipalComponent},
-    { path: '', redirectTo: '/listado', pathMatch: 'full' },
-    { path: 'listado', component: ListarClientesComponent },
-    { path: 'nuevo', component: RegistrarClientesComponent },
-    { path: 'nuevoProd', component: RegistrarProductoComponent },
-    { path: 'editar/:idcliente', component: ActualizarClientesComponent },
-    { path: 'editarProd/:codproducto', component: ActualizarProductoComponent },
-    { path: 'generarVenta', component: GenerarVentaComponent },
-    { path: 'listProducto', component: ListarProductoComponent},
-    { path: 'empleados', component: EmpleadosMantenimientoComponent},
-    { path: 'reporteCliente', component: ReporteClienteComponent},
-    { path: 'reporteEmpleado', component: ReporteEmpleadoComponent},
-    { path: 'reporteProducto', component: ReporteProductoComponent},
+const routes: Routes = [
+  { path: 'login', component: LoginEmpleadoComponent },
+  {path: 'principal', component: PaginaPrincipalComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'listado', component: ListarClientesComponent },
+  { path: 'nuevo', component: RegistrarClientesComponent },
+  { path: 'nuevoProd', component: RegistrarProductoComponent },
+  { path: 'editar/:idcliente', component: ActualizarClientesComponent },
+  { path: 'editarProd/:codproducto', component: ActualizarProductoComponent },
+  { path: 'generarVenta', component: GenerarVentaComponent },
+  { path: 'listProducto', component: ListarProductoComponent},
+  { path: 'empleados', component: EmpleadosMantenimientoComponent},
+  { path: '**', redirectTo: 'login' } // Redirige a login si la ruta no coincide con ninguna
 
-  ];
+];
 
   @NgModule({
     imports: [RouterModule.forRoot(routes)],

@@ -21,6 +21,7 @@
 import { ReporteProductoComponent } from './reporte-producto/reporte-producto.component';
 import { ReporteClienteComponent } from './reporte-cliente/reporte-cliente.component';
 import { ReporteEmpleadoComponent } from './reporte-empleado/reporte-empleado.component';
+import { LoginEmpleadoComponent } from './login-empleado/login-empleado.component';
 
 
 
@@ -38,7 +39,8 @@ import { ReporteEmpleadoComponent } from './reporte-empleado/reporte-empleado.co
       EmpleadosMantenimientoComponent,
       ReporteProductoComponent,
       ReporteClienteComponent,
-      ReporteEmpleadoComponent
+      ReporteEmpleadoComponent,
+      LoginEmpleadoComponent
     ],
     imports: [
       BrowserModule,
