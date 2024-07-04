@@ -18,6 +18,9 @@
   import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
   import { GenerarVentaComponent } from './generar-venta/generar-venta.component';
   import { EmpleadosMantenimientoComponent } from './empleados-mantenimiento/empleados-mantenimiento.component';
+import { ReporteProductoComponent } from './reporte-producto/reporte-producto.component';
+import { ReporteClienteComponent } from './reporte-cliente/reporte-cliente.component';
+import { ReporteEmpleadoComponent } from './reporte-empleado/reporte-empleado.component';
 
 
 
@@ -32,7 +35,10 @@
       ListarProductoComponent,
       ActualizarProductoComponent,
       RegistrarProductoComponent,
-      EmpleadosMantenimientoComponent
+      EmpleadosMantenimientoComponent,
+      ReporteProductoComponent,
+      ReporteClienteComponent,
+      ReporteEmpleadoComponent
     ],
     imports: [
       BrowserModule,

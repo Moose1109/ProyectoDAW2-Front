@@ -9,6 +9,9 @@
   import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
   import { EmpleadosMantenimientoComponent } from './empleados-mantenimiento/empleados-mantenimiento.component';
   import { ActualizarProductoComponent } from './actualizar-producto/actualizar-producto.component';
+import { ReporteClienteComponent } from './reporte-cliente/reporte-cliente.component';
+import { ReporteEmpleadoComponent } from './reporte-empleado/reporte-empleado.component';
+import { ReporteProductoComponent } from './reporte-producto/reporte-producto.component';
 
   const routes: Routes = [
     {path: '', component: PaginaPrincipalComponent},
@@ -21,6 +24,9 @@
     { path: 'generarVenta', component: GenerarVentaComponent },
     { path: 'listProducto', component: ListarProductoComponent},
     { path: 'empleados', component: EmpleadosMantenimientoComponent},
+    { path: 'reporteCliente', component: ReporteClienteComponent},
+    { path: 'reporteEmpleado', component: ReporteEmpleadoComponent},
+    { path: 'reporteProducto', component: ReporteProductoComponent},
 
   ];
 

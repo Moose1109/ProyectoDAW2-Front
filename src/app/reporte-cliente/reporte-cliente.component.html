@@ -1,0 +1,19 @@
+<app-pagina-principal></app-pagina-principal>
+<h2 class="text-center" style="margin: 30px;">LISTADO DE CLIENTES/PUESTO</h2>
+<table class="table table-striped table-hover align-middle">
+    <thead class="table-dark text-center">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NOMBRE/APELLIDO</th>
+        <th scope="col">CELULAR</th>
+        <th scope="col">PUESTO</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let c of clientes">
+        <th scope="row">{{ c.idcliente }}</th>
+        <td>{{ c.nomcliente + ' '+ c.apecliente}}</td>
+        <td>{{ c.celular }}</td>  
+        <td>{{ c.puesto }}</td>   
+    </tbody>
+  </table>

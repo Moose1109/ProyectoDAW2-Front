@@ -1,0 +1,19 @@
+<app-pagina-principal></app-pagina-principal>
+<h2 class="text-center" style="margin: 30px;">LISTADO DE PRODUCTO/STOCK</h2>
+<table class="table table-striped table-hover align-middle">
+    <thead class="table-dark text-center">
+      <tr>
+        <th scope="col">CODIGO</th>
+        <th scope="col">PRODUCTO</th>
+        <th scope="col">CATEGORIA</th>
+        <th scope="col">STOCK</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let p of productos">
+        <th scope="row">{{ p.codproducto }}</th>
+        <td>{{ p.nomproducto }}</td>
+        <td>{{ p.idcategoria }}</td>  
+        <td>{{ p.stock }}</td>   
+    </tbody>
+  </table>
