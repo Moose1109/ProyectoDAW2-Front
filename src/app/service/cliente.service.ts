@@ -1,37 +1,37 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Cliente } from '../model/cliente';
+  import { HttpClient } from '@angular/common/http';
+  import { Injectable } from '@angular/core';
+  import { Observable } from 'rxjs';
+  import { Cliente } from '../model/cliente';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ClienteService {
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class ClienteService {
 
-  private baseUrl = 'http://localhost:8080/api/clientes';
+    private baseUrl = 'http://localhost:8080/api/clientes';
 
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  public listar(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(this.baseUrl);
+    public listar(): Observable<Cliente[]> {
+      return this.http.get<Cliente[]>(this.baseUrl);
+    }
+
+    public registar(cliente: Cliente): Observable<Object>{
+      return this.http.post(this.baseUrl, cliente);
+    }
+
+    public buscar(id: string): Observable<Cliente> {
+      return this.http.get<Cliente>(this.baseUrl + `/${id}`);
+    }
+
+    public actualizar(id: string, cliente: Cliente): Observable<any> {
+      return this.http.put(this.baseUrl + `/${id}`, cliente);
+    }
+
+    public eliminarCliente(id: string): Observable<void> {
+      return this.http.delete<void>(`${this.baseUrl}/${id}`);
+    }
+
   }
-
-  public registar(cliente: Cliente): Observable<Object>{
-    return this.http.post(this.baseUrl, cliente);
-  }
-
-  public buscar(id: string): Observable<Cliente> {
-    return this.http.get<Cliente>(this.baseUrl + `/${id}`);
-  }
-
-  public actualizar(id: string, cliente: Cliente): Observable<any> {
-    return this.http.put(this.baseUrl + `/${id}`, cliente);
-  }
-
-  public eliminarCliente(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${id}`);
-  }
-
-}
 
